@@ -7,10 +7,20 @@ $(function() {
     inicializaCronometro();
     inicializaMarcadores();
     $("#botao-reiniciar").click(reiniciaJogo);
-    atualizarPlacar();
+    atualizaPlacar();
+
+    $("#usuarios").selectize({
+        create: true,
+        sortField: 'text'
+    });
+
+    $(".tooltip").tooltipster({
+        trigger: "custom"
+    });
 });
 
 function atualizaTempoInicial(tempo) {
+    tempoInicial = tempo;
     $("#tempo-digitacao").text(tempo);
 }
 
